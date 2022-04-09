@@ -3,6 +3,7 @@ def gv
 pipeline {
     agent any
     tools {
+        echo "start........."
         maven 'Maven'
     }
     stages {
