@@ -41,9 +41,9 @@ pipeline {
                     echo "building image"
                       echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hup-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh "docker build -t malek1234/testt:$IMAGE_NAME ."
+        sh "docker build -t malek1234/testt:${IMAGE_NAME} ."
         sh "echo $PASS | docker login -u $USER --password-stdin"
-        sh "docker push malek1234/testt:$IMAGE_NAME"
+        sh "docker push malek1234/testt:${IMAGE_NAME}"
     }
                     
                 //    gv.buildImage()
