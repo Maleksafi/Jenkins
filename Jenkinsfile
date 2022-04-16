@@ -19,7 +19,7 @@ pipeline {
            steps {
              script {
                        echo "incrementing app version..."
-                       sh 'mvn build-helper:parse-version versions:set  -DnewVersion=\\\${parsedVersion.nextMajorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.incrementalVersion}  versions:commit'
+                       sh 'mvn build-helper:parse-version versions:set  -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.nextMinorVersion}.\\\${parsedVersion.incrementalVersion}  versions:commit'
                        def matcher =readFile('pom.xml') =~ '<version>(.+)</version>'    //this will matche each version tag inside pom.xml and we need first tag 		and 		first tag insdide
                        def version =matcher[0][1]
                        env.IMAGE_NAME ="$version-$BUILD_NUMBER" // this will be the name take the tag name from insdide the POM ,than appand it with build number and save it in globalr
