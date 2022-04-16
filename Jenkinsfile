@@ -11,7 +11,7 @@ pipeline {
                 script {
                     gv = load "script.groovy"
                       echo "my my my mymy"
-                      echo "my my my mymy"
+                      echo "my my my mddymy"
                 }
             }
         }
