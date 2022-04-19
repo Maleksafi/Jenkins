@@ -78,6 +78,7 @@ echo "commit version update..."
 }
 }
 }
+	}
 
     }   
 }
