@@ -58,5 +58,26 @@ pipeline {
                 }
             }
         }
+        stage('commit version update'){
+steps{
+script {
+echo "commit version update..."
+ withCredentials([usernamePassword(credentialsId: 'Username with password	github-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+		sh 'git config --global user.email "jenkins@example.com"'	//this is just for one time if we want to set it globly to whole project we add --global 
+		sh 'git config --global user.name "jenkins"' //this is just for one time 	
+				//as alternative we cloud ssh to Jenkins server and add set of configurtion 
+		
+		sh 'git status'		//print some info for git repo before push it 
+		sh 'git branch'
+		sh 'git config --list'
+ 
+		sh "git remote set-url origin https://${USER}:${PASS}github.com/Maleksafi/Jenkins.git"	//address for remote repo and the USER and password this for our git which is pass it  //from withCredentials 
+		sh 'git add .'
+        sh 'git commit -m "ci: version bump"'
+        sh 'git push origin HEAD:master'	//master the name of branch and it will git last commit in the branch
+}
+}
+}
+
     }   
 }
