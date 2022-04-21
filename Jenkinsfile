@@ -71,7 +71,7 @@ echo "commit version update..."
 		sh 'git branch'
 		sh 'git config --list'
  
-		sh "git remote set-url origin https://${USER}:${PASS}github.com/Maleksafi/Jenkins.git"	//address for remote repo and the USER and password this for our git which is pass it  //from withCredentials 
+		sh "git remote set-url origin https://${USER}:${PASS}github/Maleksafi/Jenkins.git"	//address for remote repo and the USER and password this for our git which is pass it  //from withCredentials 
 		sh 'git add .'
         sh 'git commit -m "ci: version bump"'
         sh 'git push origin HEAD:master'	//master the name of branch and it will git last commit in the branch
