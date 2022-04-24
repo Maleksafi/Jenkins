@@ -64,7 +64,7 @@ script {
 echo "commit version update..."
  withCredentials([usernamePassword(credentialsId: 'github-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
 		sh 'git config --global user.email "jenkins@example.com"'	//this is just for one time if we want to set it globly to whole project we add --global 
-		sh 'git config --global user.name "jenkins"' //this is just for one time 	
+		//sh 'git config --global user.name "jenkins"' //this is just for one time 	
 				//as alternative we cloud ssh to Jenkins server and add set of configurtion 
 		
 		sh 'git status'		//print some info for git repo before push it 
