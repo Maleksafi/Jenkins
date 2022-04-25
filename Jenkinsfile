@@ -73,7 +73,7 @@ echo "commit version update..."
  		//sh 'git config --global --unset http.proxy'
 		//sh 'git config --global --unset https.proxy'
 
-		sh "git remote set-url origin https://${USER}:${PASS}@github/Maleksafi/Jenkins.git"	//address for remote repo and the USER and password this for our git which is pass it  //from withCredentials 
+		sh "git remote set-url origin https://${USER}:${PASS}@github.com/Maleksafi/Jenkins.git"	//address for remote repo and the USER and password this for our git which is pass it  //from withCredentials 
 		
 	 
 	sh 'git add .'
