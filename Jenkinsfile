@@ -78,7 +78,7 @@ echo "commit version update..."
 	 
 	sh 'git add .'
         sh 'git commit -m "ci: version bump"'
-        sh 'git push origin HEAD:master'	//master the name of branch and it will git last commit in the branch
+        sh 'git push origin HEAD'	//master the name of branch and it will git last commit in the branch
 }
 }
 }
