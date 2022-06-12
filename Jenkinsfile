@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     gv = load "script.groovy"
-                      echo "my my my mymy"
+                      echo "my asd"
                       echo "my my my mddymy"
                 }
             }
